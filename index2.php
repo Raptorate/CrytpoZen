@@ -24,7 +24,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         <div class="row">
             <div class="col-12">
                 <div class="innerCntainer">
-                    <h5 class="headerText">HI <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>WELCOME TO CRYPTOZEN</h5>
+                    <h5 class="headerText">HI <b><?php echo $_SESSION["username"]; ?></b>WELCOME TO CRYPTOZEN</h5>
                     <h2 class="headerText">Your Safe Path to Digital Crypto Buy.</h2>
 
 
