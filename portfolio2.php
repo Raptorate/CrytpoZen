@@ -1,7 +1,7 @@
 <?php
 include('./includes/header.php');
-include('./includes/nav.php');
-include('./includes/sidebar.php');
+include('./includes/nav2.php');
+include('./includes/sidebar2.php');
 ?>
 <style>
     <?php include './dist/style.css'; ?>
