@@ -102,73 +102,26 @@ include('./includes/sidebar.php');
         
     </div> -->
     <cards class="cards">
-        <bitcoin style="width: 30%" class="btc">
-            <card class="asset-info">
-                <div class="title">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" width="15%">
-                    <h1>Bitcoin</h1>
-                </div>
-                <div class="details">
-                    <h2 class="asset-price" id="btcPrice"></h2>
-                </div>
+
+        <bitcoin style="width: 120%">
+
+            <div id="mychart"></div>
+            <!-- <card class="asset-info">
+        <div id="mychart"></div>
+        <div class="details">
+            <div id="mychart"></div>
+        </div>  -->
             </card>
-            <canvas id="btcChart"></canvas>
         </bitcoin>
 
-
-        <cosmos style="width: 30%" class="cosmos">
-            <card class="asset-info">
-                <div class="title">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/atm.svg" width="15%">
-                    <h1>Cosmos</h1>
-                </div>
-                <div class="details">
-                    <h2 class="asset-price" id="atomPrice"></h2>
-                </div>
-            </card>
-            <canvas id="cosmosChart"></canvas>
-        </cosmos>
-
-        <ethereum style="width: 30%" class="ethereum">
-            <card class="asset-info">
-                <div class="title">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="10%">
-                    <h1>Ethereum</h1>
-                </div>
-                <div class="details">
-                    <h2 class="asset-price" id="ethPrice"></h2>
-                </div>
-            </card>
-            <canvas id="ethereumChart"></canvas>
-        </ethereum>
-
-        <ltc style="width: 30%" class="lit">
-            <card class="asset-info">
-                <div class="title">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ltc.svg" width="15%">
-                    <h1>Litcoin</h1>
-                </div>
-                <div class="details">
-                    <h2 class="asset-price" id="litPrice"></h2>
-                </div>
-            </card>
-            <canvas id="litChart"></canvas>
-        </ltc>
-
-        <bch style="width: 30%" class="bch">
-            <card class="asset-info">
-                <div class="title">
-                    <img src="https://bitcoincash.org/graphics/img/green/bitcoin-cash-circle.svg" width="10%">
-                    <h1>Bitcoin Cash</h1>
-                </div>
-                <div class="details">
-                    <h2 class="asset-price" id="bchPrice"></h2>
-                </div>
-            </card>
-            <canvas id="bchChart"></canvas>
-        </bch>
     </cards>
     <!-- ./ Wishlist Container -->
+</div>
+<!-- /.content-wrapper -->
+<script type="text/javascript" src="./dist/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cryptocharts"></script>
+<script src="./js/main.js"></script>
+<!-- ./ Wishlist Container -->
 </div>
 <!-- /.content-wrapper -->
 <script type="text/javascript" src="./dist/script.js"></script>
