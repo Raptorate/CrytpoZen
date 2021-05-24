@@ -43,10 +43,10 @@
          </a>
          <div class="dropdown-divider"></div>
          <a href="#" class="dropdown-item">
-           <i class="fa fa-info-circle"></i> Help
+           <i class="fa fa-info-circle"></i>Help
          </a>
          <div class="dropdown-divider"></div>
-         <a href="reset-password.php" class="dropdown-item dropdown-footer text-info"><b><i class="fa fa-key" aria-hidden="true"></i>Rset Password</b></a>
+         <a href="reset-password.php" class="dropdown-item dropdown-footer text-info"><b><i class="fa fa-key" aria-hidden="true"></i>Reset Password</b></a>
          <a href="logout.php" class="dropdown-item dropdown-footer text-danger"><b><i class="fa fa-sign-out-alt"></i> Signout</b></a>
 
        </div>
