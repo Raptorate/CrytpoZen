@@ -1,10 +1,8 @@
 class Transaction
 {
-  constructor(trID, trDate, trTime, tradingCurrency, tradedCurrency, amount)
+  constructor(trID, tradingCurrency, tradedCurrency, amount)
   {
     this.trID = trID;
-    this.trDate = trDate;
-    this.trTime = trTime;
     this.tradingCurrency = tradingCurrency;
     this.tradedCurrency = tradedCurrency;
     this.amount = amount;
@@ -22,26 +20,7 @@ class Transaction
     this._trID = value;
   }
 
-  get trDate()
-  {
-      return this._trDate;
-  }
-
-  set trDate(value)
-  {
-    this._trDate = value;
-  }
-
-  get trTime()
-  {
-      return this._trTime;
-  }
-
-  set trTime(value)
-  {
-    this._trTime = value;
-  }
-
+  
   get tradingCurrency()
   {
       return this._tradingCurrency;
@@ -74,7 +53,7 @@ class Transaction
 
   exportTR()
   {
-    let obj = {"ID":this.trID, "Date":this.trDate, "Time":this.trTime, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount };
+    let obj = {"ID":this.trID, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount };
     return obj;
   }
 
