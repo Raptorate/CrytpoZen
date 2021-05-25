@@ -6,6 +6,7 @@ class Transaction
     this.tradingCurrency = tradingCurrency;
     this.tradedCurrency = tradedCurrency;
     this.amount = amount;
+    this.status = false;
   }
 
 //Relevant getters and setters
@@ -51,9 +52,19 @@ class Transaction
     this._amount = value;
   }
 
+  get status()
+  {
+    return this._status;
+  }
+
+  set amount(value)
+  {
+    this._status = value;
+  }
+
   exportTR()
   {
-    let obj = {"ID":this.trID, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount };
+    let obj = {"ID":this.trID, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount, "Status":this.status };
     return obj;
   }
 
