@@ -5,6 +5,7 @@ include('./includes/sidebar2.php');
 require_once "config.php";
 
 $rows = getQuery("SELECT * from transactions where user_id = '$user_id'");
+$wallet = getQuery("SELECT * from users where id = '$user_id'");
 // $rows = getQuery("SELECT * from transactions");
 
 foreach ($rows as $row) {
@@ -33,6 +34,47 @@ foreach ($rows as $row) {
 
   </div>
   <!-- ./Top Header -->
+
+  <div class="row m-0 p-0">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body recurring rounded">
+          <!-- /.card-header -->
+          <h3 class="card-title text-bold"> Your Cypto Bank</h3>
+          <div class="card-body p-0">
+            <table class="table text-nowrap">
+              <thead style="font-size: 15px;">
+                <tr>
+                  <th>Bitcoin</th>
+                  <th>Ethereum</th>
+                  <th>Litecoin</th>
+                  <th>Bitcoin$</th>
+                  <th>ATOM</th>
+                  <th>Balance</th>
+                  <th>Last update was</th>
+                </tr>
+              </thead>
+              <?php foreach ($wallet as $w) { ?>
+                <tbody style="font-size: 14px;">
+                  <tr>
+                    <td><?php echo $w['btc'] ?></td>
+                    <td><?php echo $w['eth'] ?></td>
+                    <td><?php echo $w['ltc'] ?></td>
+                    <td><?php echo $w['bch'] ?></td>
+                    <td><?php echo $w['atom'] ?></td>
+                    <td><?php echo "$ " . $w['balance'] ?></td>
+                    <td><?php echo $w['created_at'] ?></td>
+                  </tr>
+                  <tr>
+                  <?php } ?>
+                </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Transaction Table -->
   <div class="row m-0 p-0">
     <div class="col-md-12">
