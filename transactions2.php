@@ -2,9 +2,23 @@
 include('./includes/header.php');
 include('./includes/nav2.php');
 include('./includes/sidebar2.php');
+require_once "config.php";
+
+$rows = getQuery("SELECT * from transactions where user_id = '$user_id'");
+// $rows = getQuery("SELECT * from transactions");
+
+foreach ($rows as $row) {
+  $trading_currency = $row['trading_currency'];
+  $traded_currency = $row['traded_currency'];
+  $trading_currency = $row['trading_currency'];
+  $status = $row['status'];
+  $amount = $row['amount'];
+}
+
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+
 
   <!-- Top Header -->
   <div class="jumbotron">
@@ -19,7 +33,6 @@ include('./includes/sidebar2.php');
 
   </div>
   <!-- ./Top Header -->
-
   <!-- Transaction Table -->
   <div class="row m-0 p-0">
     <div class="col-md-12">
@@ -47,51 +60,22 @@ include('./includes/sidebar2.php');
                 <th>Transferred To</th>
                 <th>Amount</th>
                 <th>Exchange Rate</th>
-                <th>Date</th>
+                <th>Date & Time</th>
               </tr>
             </thead>
-            <tbody style="font-size: 14px;">
-              <tr>
-                <td>1.</td>
-                <td>Bitcoin</td>
-                <td>Litecoin</td>
-                <td>€1.90</td>
-                <td><span class="badge bg-success">€509.90</span></td>
-                <td>16-05-2021</td>
-              </tr>
-              <tr>
-                <td>2.</td>
-                <td>Litecoin</td>
-                <td>Bitcoin</td>
-                <td>€5.90</td>
-                <td><span class="badge bg-warning">€5,509.90</span></td>
-                <td>01-11-2020</td>
-              </tr>
-              <tr>
-                <td>3.</td>
-                <td>Cardano</td>
-                <td>Bitcoin</td>
-                <td>€5,000.90</td>
-                <td><span class="badge bg-success">€54,009.30</span></td>
-                <td>09-01-2020</td>
-              </tr>
-              <tr>
-                <td>3.</td>
-                <td>Cardano</td>
-                <td>Bitcoin Cash</td>
-                <td>€5,000.90</td>
-                <td><span class="badge bg-danger">€54,009.30</span></td>
-                <td>09-01-2020</td>
-              </tr>
-              <tr>
-                <td>2.</td>
-                <td>Litecoin</td>
-                <td>Bitcoin</td>
-                <td>€5.90</td>
-                <td><span class="badge bg-primary">€5,509.90</span></td>
-                <td>01-11-2020</td>
-              </tr>
-            </tbody>
+            <?php foreach ($rows as $row) { ?>
+              <tbody style="font-size: 14px;">
+                <tr>
+                  <td>1.</td>
+                  <td><?php echo $row['trading_currency'] ?></td>
+                  <td><?php echo $row['traded_currency'] ?></td>
+                  <td><?php echo "$ " . $row['amount'] ?></td>
+                  <td><span class="badge bg-success">€509.90</span></td>
+                  <td><?php echo $row['create_at'] ?></td>
+                </tr>
+                <tr>
+                <?php } ?>
+              </tbody>
           </table>
         </div>
         <!-- /.card-body -->

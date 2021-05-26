@@ -9,6 +9,24 @@ define('DB_NAME', 'ID329156_cryptozen');
 /* Attempt to connect to MySQL database */
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
+
+
+
+function GetQuery($sql)
+{
+    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+    $result = $link->query($sql);
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    $link->close();
+    return $rows;
+}
+$rows = GetQuery("SELECT * from users ");
+foreach ($rows as $row) {
+    $user_id = $row['id'];
+}
+
+
 // Check connection
 if ($mysqli === false) {
     die("ERROR: Could not connect. " . $mysqli->connect_error);
