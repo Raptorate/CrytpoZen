@@ -14,14 +14,14 @@
    <ul class="navbar-nav ml-auto">
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
-       <button type="button" class="btn btn-primary btn-sm mt-1">Buy Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Sell Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Deposit Cash</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Withdraw Cash</button>
+       <button type="button" class="btn btn-primary btn-sm mt-1" onclick="location.href = './transaction_form.php';">Buy Crypto</button>
+       <button type="button" class="btn btn-primary btn-sm mt-1" onclick="location.href = './transaction_form.php';">Sell Crypto</button>
+       <button type="button" class="btn btn-primary btn-sm mt-1" onclick="location.href = './transaction_form.php';">Deposit Cash</button>
+       <button type="button" class="btn btn-primary btn-sm mt-1" onclick="location.href = './transaction_form.php';">Withdraw Cash</button>
 
      </li>
      <li class="nav-item dropdown">
-       <button type="button" class="btn btn-outline-primary btn-sm ml-1 mt-1">Exchange Crypto</button>
+       <button type="button" class="btn btn-outline-primary btn-sm ml-1 mt-1" onclick="location.href = '../transaction_form.php';">Exchange Crypto</button>
      </li>
      <!-- Notifications Dropdown Menu -->
      <li class="nav-item dropdown">
