@@ -100,12 +100,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+        body{ font: 14px sans-serif; 
+        background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+        .wrapper{display: table; height: 100%; margin: 10% auto;  }    
     </style>
+
+
+
 </head>
 <body>
+
     <div class="wrapper">
+    <img src="https://cryptozen.abduldribika.be/wp-content/uploads/2021/05/logo4.jpg" class="img-responsive" alt="" />
+            <br>
+            <br>    
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
