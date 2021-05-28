@@ -38,7 +38,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <span class="info-box-icon"><i class="fas fa-dollar-sign text-primary"></i></span>
 
                     <div class="info-box-content text-dark">
-                        <a href="#"><span class="info-box-number text-primary">Buy Crypto</span></a>
+                        <a href="transaction_form.php"><span class="info-box-number text-primary">Buy Crypto</span></a>
                         <span class="info-box-text">
                             Chose from BitCoin and more
                         </span>
@@ -51,7 +51,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <span class="info-box-icon"><i class="fas fa-hand-holding-usd text-primary"></i></span>
 
                     <div class="info-box-content text-dark">
-                        <a href="#"><span class="info-box-number text-primary">Deposit Cash</span></a>
+                        <a href="transaction_form.php"><span class="info-box-number text-primary">Deposit Cash</span></a>
                         <span class="info-box-text">
                             Deposit from many currencies
                         </span>
@@ -64,7 +64,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <span class="info-box-icon"><i class="fas fa-check-circle text-primary"></i></span>
 
                     <div class="info-box-content text-dark">
-                        <a href="#"><span class="info-box-number text-primary">Sell Crypto</span></a>
+                        <a href="transaction_form.php"><span class="info-box-number text-primary">Sell Crypto</span></a>
                         <span class="info-box-text">
                             Chose from BitCoin and more
                         </span>
@@ -77,7 +77,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <span class="info-box-icon"><i class="fas fa-minus-circle text-primary"></i></span>
 
                     <div class="info-box-content text-dark">
-                        <a href="#"><span class="info-box-number text-primary">Withdraw Cash</span></a>
+                        <a href="transaction_form.php"><span class="info-box-number text-primary">Withdraw Cash</span></a>
                         <span class="info-box-text">
                             Chose from BitCoin and more
                         </span>
@@ -90,7 +90,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <span class="info-box-icon"><i class="fas fa-sync-alt text-primary"></i></span>
 
                     <div class="info-box-content text-dark">
-                        <a href="#"><span class="info-box-number text-primary">Exchange Crypto</span></a>
+                        <a href="transaction_form.php"><span class="info-box-number text-primary">Exchange Crypto</span></a>
                         <span class="info-box-text">
                             Chose from BitCoin and more
                         </span>
