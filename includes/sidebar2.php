@@ -35,7 +35,12 @@
              </p>
            </a>
          </li>
-
+         <li class="nav-item">
+           <a href="howto.php" class="nav-link">
+             <i class="nav-icon fas fa-university"></i>
+             <p>How-To</p>
+           </a>
+         </li>
        </ul>
      </nav>
      <!-- /.sidebar-menu -->
