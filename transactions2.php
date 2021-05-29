@@ -137,8 +137,8 @@ foreach ($wallet as $row) {
 
 </div>
 
-<script type="text/javascript" src = "Transaction.js"></script>
-<script type="text/javascript" src = "Wallet.js"></script>
+<script type="text/javascript" src = "js/Transaction.js"></script>
+<script type="text/javascript" src = "js/Wallet.js"></script>
 <script>
   let balance = <?php echo json_encode("$balance", JSON_HEX_TAG); ?>;
   let btc = <?php echo json_encode("$btc", JSON_HEX_TAG); ?>;
