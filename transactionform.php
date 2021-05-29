@@ -9,98 +9,113 @@ include('./includes/sidebar2.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Form</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="transactionform.css">
-        <!-- jQuery library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- compiled JavaScript -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <style>
-            <?php include './dist/style.css'; ?>
-        </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- compiled JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <style>
+        <?php include './dist/style.css'; ?>
+    </style>
 </head>
 
 <body>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="background-image: url('http://i.imgur.com/GHr12sH.jpg');">
     
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-
-    <!-- Top Header -->
-    <div class="jumbotron">
-        <div class="row mt-4">
-            <div class="col-12">
-                <div class="innerCntainer">
-                    <h1 class="headerText text-center" style="color: blue;">TRANSACTION FORM</h1>
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                <div class="col-12">
+                    <h1 class="text-center">TRANSACTION FORM</h1>
+                    <p class="text-center text-muted text-sm">Welcome Premium Client</p>
                 </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <section class="content pb-2">
+            <div class="container-fluid">
+
+                <div class="card card-default">
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form action="./insertdata.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div>
+                                        <img src="https://img.icons8.com/fluent/100/000000/bitcoin-exchange.png" width="60" height="70" /><b>EXCHANGE CRYPTO</b>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Trading Currency:</label>
+                                        <select class="form-control select2" name="trading_currency" style="width: 100%;">
+                                            <option selected disabled>Select here</option>
+                                            <option value="usd">usd</option>
+                                            <option value="btc">btc</option>
+                                            <option value="eth">eth</option>
+                                            <option value="ltc">ltc</option>
+                                            <option value="atom">atom</option>
+                                            <option value="bch">bch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Traded Currency:</label>
+                                        <select class="form-control select2" name="traded_currency" style="width: 100%;">
+                                            <option selected disabled>Select here</option>
+                                            <option value="usd">usd</option>
+                                            <option value="btc">btc</option>
+                                            <option value="eth">eth</option>
+                                            <option value="ltc">ltc</option>
+                                            <option value="atom">atom</option>
+                                            <option value="bch">bch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+
+                            <div class="row">
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Amount</label>
+                                        <input type="number" class="form-control" name="amount" id="amount" value="0" placeholder="Enter Amount">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                   <!--  <button type="submit" class="btn btn-primary button float-left">
+                                        Submit
+                                    </button>
+                                    -->
+                                    <button type="button" class="btn btn-cancel button ">
+                                        <a href="index2.php">Cancel</a>
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary button float-right">
+                                        <a href="transactions2.php" style="color: white;">Trade</a>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
             </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="container d-flex justify-content-center mt-5">
-        <div class="card">
-            <div>
-                <div class="d-flex pt-3 pl-3">
-                    <div><img src="https://img.icons8.com/fluent/100/000000/bitcoin-exchange.png" width="60" height="80" /></div>
-                    <div class="mt-3 pl-2"><span class="name">EXCHANGE CRYPTO</span>
-                        <div><span class="title2">WELCOME</span><span class="pin ml-2">Premium Client</span></div>
-                    </div>
-                </div>
-
-                <div class="py-2 px-3">
-                    <div class="first pl-2 d-flex py-2">
-                        <div class="form-check" ><form action = ""></div>
-                        <div class="border-left pl-2"><span class="head"><label for="trading"> <b>Trading Currency:</b> </label></span>
-                            <div><span class="crypto"><input list="trading"></span><span class="amount"><datalist id="trading">
-                                <option value="USD">
-                                <option value="BTC">
-                                <option value="ETH">
-                                <option value="LTC">
-                                <option value="ATOM">
-                                <option value="BCH">
-                              </datalist><br></span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="py-2 px-3">
-                    <div class="second pl-2 d-flex py-2">
-                        <div class="form-check"><form action = ""></div>
-                        <div class="border-left pl-2"><span class="head"><label for="traded"> <b>Traded Currency:</b></label></span>
-                            <div><span class="crypto"><input list="traded"></span><span class="amount"><datalist id="traded">
-                                <option value="USD">
-                                <option value="BTC">
-                                <option value="ETH">
-                                <option value="LTC">
-                                <option value="ATOM">
-                                <option value="BCH">
-                              </datalist><br>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="d-flex justify-content-between px-3 pt-4 pb-3">
-                    <button type="button" class="btn btn-cancel button">
-                        <a href="index2.php">Cancel</a>
-                    </button>
-                    
-                    <button type="button" class="btn btn-primary button">
-                        <a href="transactions2.php" style="color: white;">Trade</a>
-                    </button>
-                    
-                    <!--
-                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-                </div>
-                    <p>Already have an account? <a href="login.php">Login here</a>.</p>
-                -->
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 
