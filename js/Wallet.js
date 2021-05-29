@@ -43,21 +43,21 @@ class Wallet
 
     //Main function that checks the validity of a transaction and updates accordingly by calling updatePortfolio()
 
-    calculate(price, tradingCurrency, tradedCurrency, amount)
+    calculate(price, transaction)
     {
-        console.log(price);
-        if(tradingCurrency === "usd" )
+        if(transaction.tradingCurrency === "usd" )
         {
-            if(price*amount > this.balance)
+            if(price*transaction.amount > this.balance)
             {
                 console.log("Not enough balance");
                 return false;
             }
             else
             {
-                this.balance = this.balance - price*amount;
-                this.updatePortfolio(tradedCurrency, amount);
+                this.balance = this.balance - price*transaction.amount;
+                this.updatePortfolio(transaction.tradedCurrency, transaction.amount);
                 console.log("Transaction Succesful");
+                transaction.status = true;
                 this.displayPortfolio();
                 return true;
             }
@@ -65,12 +65,12 @@ class Wallet
         else
         {   
             let check = false;
-            switch(tradingCurrency)
+            switch(transaction.tradingCurrency)
             {
                 case "btc":
-                    if(price*amount < this.btc)
+                    if(price*transaction.amount < this.btc)
                     {    
-                        this.btc -= price*amount; 
+                        this.btc -= price*transacton.amount; 
                         check = true;
                     }
                         
@@ -80,9 +80,9 @@ class Wallet
                     break;
 
                 case "eth":
-                    if(price*amount < this.eth)
+                    if(price*transaction.amount < this.eth)
                     {
-                        this.eth -= price*amount;
+                        this.eth -= price*transaction.amount;
                         check = true;
                     }
                     else
@@ -90,9 +90,9 @@ class Wallet
                     break;
 
                 case "ltc":
-                    if(price*amount < this.ltc)
+                    if(price*transaction.amount < this.ltc)
                     {
-                        this.ltc -= price*amount;
+                        this.ltc -= price*transaction.amount;
                         check = true;
                     }
                     else
@@ -100,9 +100,9 @@ class Wallet
                     break;
 
                 case "bth":
-                    if(price*amount < this.bth)
+                    if(price*transaction.amount < this.bth)
                     {
-                        this.bth -= price*amount;
+                        this.bth -= price*transaction.amount;
                         check = true;
                     }
                     else
@@ -110,9 +110,9 @@ class Wallet
                     break;
 
                 case "atom":
-                    if(price*amount < this.atom)
+                    if(price*transaction.amount < this.atom)
                     {
-                        this.atom -= price*amount;
+                        this.atom -= price*transaction.amount;
                         check = true;
                     }
                     else
@@ -121,8 +121,9 @@ class Wallet
              }
              if(check)
              {
-                this.updatePortfolio(tradedCurrency, amount);
+                this.updatePortfolio(transaction.tradedCurrency, transaction.amount);
                 console.log("Transaction Succesful");
+                transaction.status = true;
                 this.displayPortfolio();
                 return true;
              }
@@ -173,12 +174,11 @@ class Wallet
     update(transaction)
     {
 
+        let status = false;
         let url = "https://api.cryptonator.com/api/full/" + transaction.tradedCurrency + "-" + transaction.tradingCurrency;
         fetch(url)
         .then(response => response.json())
-        .then(data => this.calculate(data.ticker.price, transaction.tradingCurrency, transaction.tradedCurrency, transaction.amount));
-        
-        
+        .then(data => this.calculate(data.ticker.price, transaction));
         
     }
 
