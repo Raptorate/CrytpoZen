@@ -3,40 +3,20 @@
 
 class Wallet
 {
-    constructor(wID, userID, balance)
+    constructor(balance, btc, eth, atom, ltc, bch)
     {
-        this.wID = wID;
-        this.userID = userID;
         this.balance = balance;
-        this.btc = 0;
-        this.eth = 0;
-        this.atom = 0;
-        this.ltc = 0;
-        this.bch = 0;
+        this.btc = btc;
+        this.eth = eth;
+        this.atom = atom;
+        this.ltc = ltc;
+        this.bch = bch;
 
     }
 
 // Relevant getters and setters
 
-    get wID()
-    {
-        return this._wID;
-    }
-
-    set wID(value)
-    {
-        this._wID = value;
-    }
-
-    get userID()
-    {
-        return this._userID;
-    }
-
-    set userID(value)
-    {
-        this._userID = value;
-    }
+    
 
     get balance()
     {
@@ -47,6 +27,8 @@ class Wallet
     {
         this._balance = value;
     }
+
+//Wallet Functions
 
     addBalance(value)
     {
@@ -63,7 +45,6 @@ class Wallet
 
     calculate(price, tradingCurrency, tradedCurrency, amount)
     {
-        let target = this.b
         console.log(price);
         if(tradingCurrency === "usd" )
         {
