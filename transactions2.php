@@ -15,6 +15,14 @@ foreach ($rows as $row) {
   $status = $row['status'];
   $amount = $row['amount'];
 }
+foreach ($wallet as $row) {
+  $balance = $row['balance'];
+  $ltc = $row['ltc'];
+  $btc = $row['btc'];
+  $atom = $row['atom'];
+  $bch = $row['bch'];
+  $eth = $row['eth'];
+}
 
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -97,7 +105,7 @@ foreach ($rows as $row) {
           <table class="table text-nowrap">
             <thead style="font-size: 15px;">
               <tr>
-                <th>#</th>
+
                 <th>Transferred From</th>
                 <th>Transferred To</th>
                 <th>Amount</th>
@@ -108,7 +116,7 @@ foreach ($rows as $row) {
             <?php foreach ($rows as $row) { ?>
               <tbody style="font-size: 14px;">
                 <tr>
-                  <td>1.</td>
+
                   <td><?php echo $row['trading_currency'] ?></td>
                   <td><?php echo $row['traded_currency'] ?></td>
                   <td><?php echo "$ " . $row['amount'] ?></td>
@@ -128,7 +136,16 @@ foreach ($rows as $row) {
   <!-- ./ Transaction Table -->
 
 </div>
-<!-- /.content-wrapper -->
+<script>
+  let balance = <?php echo json_encode("$balance", JSON_HEX_TAG); ?>;
+  let btc = <?php echo json_encode("$btc", JSON_HEX_TAG); ?>;
+  let eth = <?php echo json_encode("$eth", JSON_HEX_TAG); ?>;
+  let ltc = <?php echo json_encode("$ltc", JSON_HEX_TAG); ?>;
+  let atom = <?php echo json_encode("$atom", JSON_HEX_TAG); ?>;
+  let bch = <?php echo json_encode("$bch", JSON_HEX_TAG); ?>;
+  console.log("loaded ");
+  console.log(balance);
+</script>
 <?php
 include('./includes/footer.php');
 ?>
