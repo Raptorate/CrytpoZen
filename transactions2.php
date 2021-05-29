@@ -136,6 +136,9 @@ foreach ($wallet as $row) {
   <!-- ./ Transaction Table -->
 
 </div>
+
+<script type="text/javascript" src = "Transaction.js"></script>
+<script type="text/javascript" src = "Wallet.js"></script>
 <script>
   let balance = <?php echo json_encode("$balance", JSON_HEX_TAG); ?>;
   let btc = <?php echo json_encode("$btc", JSON_HEX_TAG); ?>;
@@ -143,8 +146,16 @@ foreach ($wallet as $row) {
   let ltc = <?php echo json_encode("$ltc", JSON_HEX_TAG); ?>;
   let atom = <?php echo json_encode("$atom", JSON_HEX_TAG); ?>;
   let bch = <?php echo json_encode("$bch", JSON_HEX_TAG); ?>;
+
+  let trading = <?php echo json_encode("$trading_currency", JSON_HEX_TAG); ?>;
+  let balance = <?php echo json_encode("$traded_currency", JSON_HEX_TAG); ?>;
+  let amount = <?php echo json_encode("$amount", JSON_HEX_TAG); ?>;
   console.log("loaded ");
   console.log(balance);
+  let wallet = new Wallet(balance, btc, eth, atom, ltc, bch);
+  let transaction = new Transaction(trading, traded, amount);
+  wallet.update(transaction);
+
 </script>
 <?php
 include('./includes/footer.php');
