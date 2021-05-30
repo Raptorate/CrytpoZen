@@ -9,7 +9,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 }
 
 // Include config file
-require_once "config.php";
+ require_once "config.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -96,18 +96,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            font: 14px sans-serif;
+        body{ font: 14px sans-serif; 
+        background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         }
-
-        .wrapper {
-            width: 350px;
-            padding: 20px;
-        }
+        .wrapper{display: table; height: 100%; margin: 5% auto;  }    
     </style>
 </head>
 
 <body>
+        
+    <div class="ml-5 mt-5">
+        <img src="https://cryptozen.abduldribika.be/wp-content/uploads/2018/10/Logog_blue.svg" width="50" height="50" alt="" /><span style="font-size: 20px; font-weight: bold;">CRYTOZEN</span>
+    </div>
+
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
