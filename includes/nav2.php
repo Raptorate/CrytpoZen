@@ -14,20 +14,19 @@
    <ul class="navbar-nav ml-auto">
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
-       <button type="button" class="btn btn-primary btn-sm mt-1">Buy Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Sell Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Deposit Cash</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Withdraw Cash</button>
-
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="transaction_form.php" style="color: white;">Buy Crypto</a></button>
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="transaction_form.php" style="color: white;">Sell Crypto</a></button>
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="transaction_cash.php" style="color: white;">Deposit Cash</a></button>
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="transaction_cash.php" style="color: white;">Withdraw Cash</a></button>     
      </li>
      <li class="nav-item dropdown">
-       <button type="button" class="btn btn-outline-primary btn-sm ml-1 mt-1">Exchange Crypto</button>
+       <button type="button" class="btn btn-outline-primary btn-sm ml-1 mt-1"><a href="transaction_form.php" style="color: white;">Exchange Crypto</a></button></button>
      </li>
      <!-- Notifications Dropdown Menu -->
      <li class="nav-item dropdown">
        <a class="nav-link" data-toggle="dropdown" href="#">
          <i class="far fa-user-circle text-primary" style="font-size: 16px;"></i>
-         <span class="">Hello </span>
+         <span class="">Premium User </span>
        </a>
        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
          <div class="image my-lg-3">
@@ -42,7 +41,7 @@
            <i class="fa fa-dollar-sign"></i> Transaction
          </a>
          <div class="dropdown-divider"></div>
-         <a href="#" class="dropdown-item">
+         <a href="howto.php" class="dropdown-item">
            <i class="fa fa-info-circle"></i>Help
          </a>
 
@@ -55,11 +54,8 @@
          </a>
 
          <div class="dropdown-divider"></div>
-<<<<<<< HEAD
+
          <a href="reset-password.php" class="dropdown-item dropdown-footer text-info"><b><i class="fa fa-key" aria-hidden="true"></i>Reset Password</b></a>
-=======
-         <a href="reset-password.php" class="dropdown-item dropdown-footer text-info"><b><i class="fa fa-key" aria-hidden="true"></i> Reset Password</b></a>
->>>>>>> index2Issue
          <a href="logout.php" class="dropdown-item dropdown-footer text-danger"><b><i class="fa fa-sign-out-alt"></i> Signout</b></a>
 
 
