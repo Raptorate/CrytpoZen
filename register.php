@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+ require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -107,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         -o-background-size: cover;
         background-size: cover;
         }
-        .wrapper{display: table; height: 100%; margin: 10% auto;  }    
+        .wrapper{display: table; height: 100%; margin: 5% auto;  }    
     </style>
 
 
@@ -115,10 +115,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
 
+    <div class="ml-5 mt-5">
+        <img src="https://cryptozen.abduldribika.be/wp-content/uploads/2018/10/Logog_blue.svg" width="50" height="50" alt="" /><span style="font-size: 20px; font-weight: bold;">CRYPTOZEN</span>
+    </div>
+
     <div class="wrapper">
-    <img src="https://cryptozen.abduldribika.be/wp-content/uploads/2021/05/logo4.jpg" class="img-responsive" alt="" />
-            <br>
-            <br>    
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -139,7 +140,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+                <input type="reset" class="btn btn-secondary ml-2" value="Reset" >
+                
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
