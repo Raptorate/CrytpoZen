@@ -11,7 +11,7 @@ class Wallet
         this.atom = atom;
         this.ltc = ltc;
         this.bch = bch;
-
+        this.success = false;
     }
 
 // Relevant getters and setters
@@ -58,6 +58,16 @@ class Wallet
                 this.updatePortfolio(transaction.tradedCurrency, transaction.amount);
                 console.log("Transaction Succesful");
                 transaction.status = true;
+                this.success = true;
+                let stream = this.exportWallet();
+                $.ajax({
+                    url:"js/confirm.php",
+                    method: "post",
+                    data: stream,
+                    success: function(res){
+                      console.log(res);
+                    }
+                  })
                 this.displayPortfolio();
                 return true;
             }
@@ -72,6 +82,7 @@ class Wallet
                     {    
                         this.btc -= price*transacton.amount; 
                         check = true;
+                        break;
                     }
                         
                     else
@@ -84,6 +95,7 @@ class Wallet
                     {
                         this.eth -= price*transaction.amount;
                         check = true;
+                        break;
                     }
                     else
                         console.log("Not enough balance");
@@ -94,6 +106,7 @@ class Wallet
                     {
                         this.ltc -= price*transaction.amount;
                         check = true;
+                        break;
                     }
                     else
                         console.log("Not enough balance");
@@ -104,6 +117,7 @@ class Wallet
                     {
                         this.bth -= price*transaction.amount;
                         check = true;
+                        break;
                     }
                     else
                         console.log("Not enough balance");
@@ -114,6 +128,7 @@ class Wallet
                     {
                         this.atom -= price*transaction.amount;
                         check = true;
+                        break;
                     }
                     else
                         console.log("Not enough balance");
@@ -124,16 +139,50 @@ class Wallet
                 this.updatePortfolio(transaction.tradedCurrency, transaction.amount);
                 console.log("Transaction Succesful");
                 transaction.status = true;
+                this.success = true;
+                let stream = this.exportWallet();
+                $.ajax({
+                    url:"js/confirm.php",
+                    method: "post",
+                    data: stream,
+                    success: function(res){
+                      console.log(res);
+                    }
+                  })
                 this.displayPortfolio();
                 return true;
+             }
+
+             else{
+                 console.log("Transaction failed");
+                 return false;
              }
 
 
         }
     }
 
+
 // Function to display the entire portfolio
 
+
+    exportWallet()
+    {
+        let exported = {
+        "balance":this.balance,
+        "btc":this.btc,
+        "eth":this.eth,
+        "atom":this.atom,
+        "ltc":this.ltc,
+        "bch":this.bch,
+        "success":this.success
+        };
+
+        return exported;
+        
+    }
+
+    
     displayPortfolio()
     {
         console.log("Balance : " +this.balance);
@@ -169,17 +218,17 @@ class Wallet
         }
     }
 
+
     //Function to initiate transaction from wallet
 
     update(transaction)
     {
-
-        let status = false;
+        let exc = 0;
         let url = "https://api.cryptonator.com/api/full/" + transaction.tradedCurrency + "-" + transaction.tradingCurrency;
         fetch(url)
         .then(response => response.json())
         .then(data => this.calculate(data.ticker.price, transaction));
-        
+
     }
 
 }

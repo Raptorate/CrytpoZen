@@ -5,6 +5,7 @@ class Transaction
     this.tradingCurrency = tradingCurrency;
     this.tradedCurrency = tradedCurrency;
     this.amount = amount;
+    this.status = false;
   }
 
 //Relevant getters and setters
@@ -40,10 +41,31 @@ class Transaction
     this._amount = value;
   }
 
+  get status()
+  {
+      return this._status;
+  }
+
+  set status(value)
+  {
+    this._status = value;
+  }
+
   exportTR()
   {
-    let obj = {"ID":this.trID, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount };
+    let obj = {"Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount, "Status":this.status };
     return obj;
   }
 
 }
+/*<script type="text/javascript">
+  wallet.displayPortfolio();
+  $.ajax({
+    url:"js/confirm.php",
+    method: "post",
+    data: wallet,
+    success: function(res){
+      console.log(res);
+    }
+  })
+</script>*/
