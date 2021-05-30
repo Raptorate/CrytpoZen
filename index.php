@@ -42,7 +42,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <div class="info-box-content text-dark">
                         <a href="#"><span class="info-box-number text-primary">Buy Crypto</span></a>
                         <span class="info-box-text">
-                            Chose from BitCoin and more
+                            Choose from BitCoin and more
                         </span>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <div class="info-box-content text-dark">
                         <a href="#"><span class="info-box-number text-primary">Sell Crypto</span></a>
                         <span class="info-box-text">
-                            Chose from BitCoin and more
+                            Choose from BitCoin and more
                         </span>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <div class="info-box-content text-dark">
                         <a href="#"><span class="info-box-number text-primary">Withdraw Cash</span></a>
                         <span class="info-box-text">
-                            Chose from BitCoin and more
+                            Choose from BitCoin and more
                         </span>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <div class="info-box-content text-dark">
                         <a href="#"><span class="info-box-number text-primary">Exchange Crypto</span></a>
                         <span class="info-box-text">
-                            Chose from BitCoin and more
+                            Choose from BitCoin and more
                         </span>
                     </div>
                 </div>
