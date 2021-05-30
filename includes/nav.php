@@ -14,11 +14,8 @@
    <ul class="navbar-nav ml-auto">
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
-       <button type="button" class="btn btn-primary btn-sm mt-1">Buy Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Sell Crypto</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Deposit Cash</button>
-       <button type="button" class="btn btn-primary btn-sm mt-1">Withdraw Cash</button>
-
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="Signup.php" style="color: white;">Signup</a></button>     
+       <button type="button" class="btn btn-primary btn-sm mt-1"><a href="Login.php" style="color: white;">Login</a></button>     
      </li>
 
    </ul>
