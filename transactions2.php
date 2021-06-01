@@ -1,12 +1,31 @@
 <?php
+
+require_once "config.php";
+session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+// if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+//   header("location: index2.php");
+//   exit;
+// }
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  header("location: login.php");
+  exit;
+}
 include('./includes/header.php');
 include('./includes/nav2.php');
 include('./includes/sidebar2.php');
-require_once "config.php";
+?>
 
-$rows = getQuery("SELECT * from transactions where user_id = '$user_id'");
+<?php
+$user_id = $_SESSION['id'];
+
+$rows = getQuery("SELECT * from transactions where user_id = '$user_id' and status = 1");
 $wallet = getQuery("SELECT * from users where id = '$user_id'");
 // $rows = getQuery("SELECT * from transactions");
+
+
 
 foreach ($rows as $row) {
   $trading_currency = $row['trading_currency'];
@@ -22,6 +41,7 @@ foreach ($wallet as $row) {
   $atom = $row['atom'];
   $bch = $row['bch'];
   $eth = $row['eth'];
+  $id = $row['id'];
 }
 
 ?>
@@ -109,7 +129,6 @@ foreach ($wallet as $row) {
                 <th>Transferred From</th>
                 <th>Transferred To</th>
                 <th>Amount</th>
-                <th>Exchange Rate</th>
                 <th>Date & Time</th>
               </tr>
             </thead>
@@ -119,8 +138,7 @@ foreach ($wallet as $row) {
 
                   <td><?php echo $row['trading_currency'] ?></td>
                   <td><?php echo $row['traded_currency'] ?></td>
-                  <td><?php echo "$ " . $row['amount'] ?></td>
-                  <td><span class="badge bg-success">€509.90</span></td>
+                  <td><?php echo  $row['amount'] ?></td>
                   <td><?php echo $row['create_at'] ?></td>
                 </tr>
                 <tr>
@@ -136,16 +154,42 @@ foreach ($wallet as $row) {
   <!-- ./ Transaction Table -->
 
 </div>
+
+<script type="text/javascript" src="js/Transaction.js"></script>
+<script type="text/javascript" src="js/Wallet.js"></script>
 <script>
+  var p1 = "success";
+</script>
+
+
+<script>
+  let user_id = <?php echo json_encode("$user_id", JSON_HEX_TAG); ?>;
   let balance = <?php echo json_encode("$balance", JSON_HEX_TAG); ?>;
   let btc = <?php echo json_encode("$btc", JSON_HEX_TAG); ?>;
   let eth = <?php echo json_encode("$eth", JSON_HEX_TAG); ?>;
   let ltc = <?php echo json_encode("$ltc", JSON_HEX_TAG); ?>;
   let atom = <?php echo json_encode("$atom", JSON_HEX_TAG); ?>;
   let bch = <?php echo json_encode("$bch", JSON_HEX_TAG); ?>;
-  console.log("loaded ");
-  console.log(balance);
+  let id = <?php echo json_encode("$id", JSON_HEX_TAG); ?>;
+
+  let trading = <?php echo json_encode("$trading_currency", JSON_HEX_TAG); ?>;
+  let traded = <?php echo json_encode("$traded_currency", JSON_HEX_TAG); ?>;
+  let amount = <?php echo json_encode("$amount", JSON_HEX_TAG); ?>;
+  var a = parseFloat(btc)
+  var b = parseFloat(eth)
+  var c = parseFloat(ltc)
+  var d = parseFloat(atom)
+  var e = parseFloat(bch)
+  var f = parseFloat(balance)
+  var g = parseFloat(amount)
+  // let wallet = new Wallet(f, a, b, d, c, e);
+  // let transaction = new Transaction(trading, traded, g);
+  // wallet.update(transaction);
+
+  // let value = wallet.displayPortfolio();
 </script>
+
+
 <?php
 include('./includes/footer.php');
 ?>

@@ -1,0 +1,130 @@
+.jumbotron{
+    background-color: #007bff;
+    color:white;
+    padding-top: 20px !important;
+    border-radius: 0px;
+}
+.white{
+    background-color:white;
+    border: 0.1px solid black;
+}
+.row{
+    padding:0px 50px
+}
+.recurring{
+    padding: 20px;  
+    background-color:white
+}
+.chart{
+    background-color:white
+}
+.image{
+    width:100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center
+}
+.text{
+    color: gray
+}
+img{
+    width:50px;
+    height:50px;
+    box-shadow : none
+}
+.headerText{
+    color: white;
+}
+.bordered{
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+.headerDivs{
+    margin-top: 30px;
+}
+.innerCntainer{
+    padding: 25px 0;
+}
+.chart-container {
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+}
+.myicon{
+  background-color: #e3e6e9;
+  font-size: larger;
+  padding: 3px 6px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.myDivsIcons{
+  background-color: #3dcd8c;
+  color: white;
+  padding: 3px 6px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.headerright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+.headerleft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+.mybtn{
+    margin: 0 5px;
+}
+.nav-item a{
+    color: black;
+}
+.nav-item a.active{
+    color: #1652f0;
+}
+
+@media (max-width: 1200px)
+{
+    .myHeaderDivsContainer {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .bordered{
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        border-left: none;
+        border-right: none;
+    }
+    .myHeaderDivsContainer .row div{
+        padding: 15px;
+    }
+}
+
+@media (max-width: 420px)
+{
+    .headerright{
+        height: 70px;
+    }
+    .headerleft{
+        height: 70px;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .container {
+        width: 850px;
+    }
+}
+@media (min-width: 992px)
+{
+    .container {
+        width: 700px;
+    }
+}

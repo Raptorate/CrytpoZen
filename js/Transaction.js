@@ -1,81 +1,63 @@
-class Transaction
-{
-  constructor(trID, trDate, trTime, tradingCurrency, tradedCurrency, amount)
-  {
-    this.trID = trID;
-    this.trDate = trDate;
-    this.trTime = trTime;
-    this.tradingCurrency = tradingCurrency;
-    this.tradedCurrency = tradedCurrency;
-    this.amount = amount;
-  }
+class Transaction {
+    constructor(tradingCurrency, tradedCurrency, amount) {
+        this.tradingCurrency = tradingCurrency;
+        this.tradedCurrency = tradedCurrency;
+        this.amount = amount;
+        this.status = false;
+    }
 
-//Relevant getters and setters
+    //Relevant getters and setters
 
-  get trID()
-  {
-      return this._trID;
-  }
+    get tradingCurrency() {
+        return this._tradingCurrency;
+    }
 
-  set trID(value) 
-  {
-    this._trID = value;
-  }
+    set tradingCurrency(value) {
+        this._tradingCurrency = value;
+    }
 
-  get trDate()
-  {
-      return this._trDate;
-  }
+    get tradedCurrency() {
+        return this._tradedCurrency;
+    }
 
-  set trDate(value)
-  {
-    this._trDate = value;
-  }
+    set tradedCurrency(value) {
+        this._tradedCurrency = value;
+    }
 
-  get trTime()
-  {
-      return this._trTime;
-  }
+    get amount() {
+        return this._amount;
+    }
 
-  set trTime(value)
-  {
-    this._trTime = value;
-  }
+    set amount(value) {
+        this._amount = value;
+    }
 
-  get tradingCurrency()
-  {
-      return this._tradingCurrency;
-  }
+    get status() {
+        return this._status;
+    }
 
-  set tradingCurrency(value)
-  {
-    this._tradingCurrency = value;
-  }
+    set status(value) {
+        this._status = value;
+    }
 
-  get tradedCurrency()
-  {
-      return this._tradedCurrency;
-  }
-
-  set tradedCurrency(value)
-  {
-    this._tradedCurrency = value;
-  }
-
-  get amount()
-  {
-      return this._amount;
-  }
-
-  set amount(value)
-  {
-    this._amount = value;
-  }
-
-  exportTR()
-  {
-    let obj = {"ID":this.trID, "Date":this.trDate, "Time":this.trTime, "Trading Currency":this.tradingCurrency, "Traded Currency":this.tradedCurrency, "Amount":this.amount };
-    return obj;
-  }
-
+    exportTR() {
+        let obj = {
+            "Trading Currency": this.tradingCurrency,
+            "Traded Currency": this.tradedCurrency,
+            Amount: this.amount,
+            Status: this.status,
+        };
+        return obj;
+    }
 }
+/*<script type="text/javascript">
+wallet.displayPortfolio();
+$.ajax({
+  url:"js/confirm.php",
+  method: "post",
+  data: wallet,
+  success: function(res){
+    console.log(res);
+  }
+})
+</script>*/

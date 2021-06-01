@@ -22,7 +22,7 @@ include('./includes/sidebar2.php');
 <body>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="background-image: url('http://i.imgur.com/GHr12sH.jpg');">
+    <div class="content-wrapper">
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -42,7 +42,7 @@ include('./includes/sidebar2.php');
                 <div class="card card-default">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <form action="./insertdata.php" method="POST">
+                        <form action="./updatebalance.php" method="POST">
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <div>
@@ -51,41 +51,23 @@ include('./includes/sidebar2.php');
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Trading Currency:</label>
-                                        <select class="form-control select2" name="trading_currency" style="width: 100%;">
-                                            <option selected disabled>Select here</option>
-                                            <option value="usd">usd</option>
-                                            <option value="btc">btc</option>
-                                            <option value="eth">eth</option>
-                                            <option value="ltc">ltc</option>
-                                            <option value="atom">atom</option>
-                                            <option value="bch">bch</option>
+                                        <label>Deposit or Withdraw Cash:</label>
+                                        <select class="form-control select2" name="add_remove_funds" style="width: 100%;">
+                                            <option selected disabled>Deposit/Withdraw</option>
+                                            <option value="deposit">Deposit Cash </option>
+                                            <option value="withdraw">Withdraw Cash</option>
+
                                         </select>
                                     </div>
                                 </div>
-                                <!-- /.col -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Traded Currency:</label>
-                                        <select class="form-control select2" name="traded_currency" style="width: 100%;">
-                                            <option selected disabled>Select here</option>
-                                            <option value="usd">usd</option>
-                                            <option value="btc">btc</option>
-                                            <option value="eth">eth</option>
-                                            <option value="ltc">ltc</option>
-                                            <option value="atom">atom</option>
-                                            <option value="bch">bch</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- /.col -->
+
                             </div>
                             <!-- /.row -->
 
                             <div class="row">
-                                <div class="col-12 col-sm-12">
+                                <div class="col-6 col-sm-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Amount</label>
+                                        <label for="inputamount">Amount</label>
                                         <input type="float" class="form-control" name="amount" id="amount" value="0" placeholder="Enter Amount">
                                     </div>
                                 </div>
@@ -93,19 +75,19 @@ include('./includes/sidebar2.php');
                             <!-- /.row -->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <!--  <button type="submit" class="btn btn-primary button float-left">
-                                        Submit
-                                    </button>
-                                    -->
-                                    <button type="button" class="btn btn-cancel button ">
-                                        <a href="index2.php">Cancel</a>
+                                    <button type="submit" class="btn btn-primary button float-left">
+                                        <a style="color: white;">Confirm</a>
                                     </button>
                                 </div>
                                 <div class="col-md-6">
+                                    <!--
                                     <button type="submit" class="btn btn-primary button float-right">
-                                        <a style="color: white;">Trade</a>
+                                        <a href="transactions2.php" style="color: white;">Confirm</a>
+                                    </button> 
+                                    -->
+                                    <button type="button" class="btn btn-cancel button float-left">
+                                        <a href="index2.php">Cancel</a>
                                     </button>
-
                                 </div>
                             </div>
 

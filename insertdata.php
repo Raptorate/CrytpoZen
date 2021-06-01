@@ -27,26 +27,27 @@ function GetQuery($sql)
     $link->close();
     return $rows;
 }
-$rows = GetQuery("SELECT * from users ");
-foreach ($rows as $row) {
-    $user_id = $row['id'];
-}
+// $rows = GetQuery("SELECT * from users ");
+// foreach ($rows as $row) {
+//     $user_id = $row['id'];
+// }
+session_start();
+
+//when the user make the transactions we insert the record to the db base and update the wallet
+$user_id = $_SESSION['id'];
+
 
 // assinging variables to the data coming from the post form
 $trading_currency = $_POST['trading_currency'];
 $traded_currency = $_POST['traded_currency'];
 $amount = $_POST['amount'];
-$sql = "INSERT INTO `transactions` (`user_id`, `trading_currency`, `traded_currency`, `amount`, `status`) VALUES ( '$user_id', '$trading_currency', '$traded_currency', $amount, '1')";
+$sql = "INSERT INTO `transactions` (`user_id`, `trading_currency`, `traded_currency`, `amount`, `status`) VALUES ( '$user_id', '$trading_currency', '$traded_currency', $amount, '0')";
 
 // check if query went through if yes show the transactions2 page 
 if ($conn->query($sql) === TRUE) {
-    header("location: transactions2.php");
-    echo " $trading_currency";
+    header("location: calculationpage.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
-
-
-//when the user make the transactions we insert the record to the db base and update the wallet

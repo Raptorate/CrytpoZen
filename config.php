@@ -21,10 +21,6 @@ function GetQuery($sql)
     $link->close();
     return $rows;
 }
-$rows = GetQuery("SELECT * from users ");
-foreach ($rows as $row) {
-    $user_id = $row['id'];
-}
 
 
 // Check connection
